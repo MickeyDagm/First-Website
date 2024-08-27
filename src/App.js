@@ -24,14 +24,14 @@ function App() {
       setIsMediumScreenWidth(window.innerWidth < 900);
       setIsSmallScreenWidth(window.innerWidth < 600);
       if (!isMediumScreenWidth || !isSmallScreenWidth) {
-        setIsCategoryVisible(true);
+        setIsCategoryVisible(false);
       }
     };
     //Add event listener for screen resizing
     window.addEventListener("resize", handleResize);
     //Cleanup function to remove event listener on unmount
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [isMediumScreenWidth, isSmallScreenWidth]);
 
   useEffect(
     function () {
