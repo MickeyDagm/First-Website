@@ -47,9 +47,18 @@ function Fact({ setFacts, fact, supabase }) {
   return (
     <li className="fact">
       <p>
-        {isDisputed ? <span className="disputed">[<span>⛔️</span>DISPUTED]</span> : null}
+        {isDisputed ? (
+          <span className="disputed">
+            [<span>⛔️</span>DISPUTED]
+          </span>
+        ) : null}
         {fact.text}
-        <a className="source" href={fact.source} target="_blank">
+        <a
+          className="source"
+          href={fact.source}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           (Source)
         </a>
       </p>
@@ -67,16 +76,25 @@ function Fact({ setFacts, fact, supabase }) {
           onClick={() => handleVote("voteInteresting")}
           disabled={isUpdateing}
         >
-          <span>👍</span> {fact.voteInteresting}
+          <span role="img" aria-label="Interestig">
+            👍
+          </span>{" "}
+          {fact.voteInteresting}
         </button>
         <button
           onClick={() => handleVote("voteMindBlowing")}
           disabled={isUpdateing}
         >
-          <span>🤯</span> {fact.voteMindBlowing}
+          <span role="img" aria-label="Mind Blowing">
+            🤯
+          </span>{" "}
+          {fact.voteMindBlowing}
         </button>
         <button onClick={() => handleVote("voteFalse")} disabled={isUpdateing}>
-          <span>⛔️</span> {fact.voteFalse}
+          <span role="img" aria-label="False">
+            ⛔️
+          </span>{" "}
+          {fact.voteFalse}
         </button>
       </div>
     </li>
