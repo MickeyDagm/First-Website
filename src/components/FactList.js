@@ -49,7 +49,11 @@ function Fact({ setFacts, fact, supabase }) {
       <p>
         {isDisputed ? (
           <span className="disputed">
-            [<span role="img" aria-label="False">⛔️</span>DISPUTED]
+            [
+            <span role="img" aria-label="No entry emoji">
+              ⛔️
+            </span>
+            DISPUTED]
           </span>
         ) : null}
         {fact.text}
@@ -91,7 +95,7 @@ function Fact({ setFacts, fact, supabase }) {
           {fact.voteMindBlowing}
         </button>
         <button onClick={() => handleVote("voteFalse")} disabled={isUpdateing}>
-          <span role="img" aria-label="False emoji">
+          <span role="img" aria-label="No entry emoji">
             ⛔️
           </span>{" "}
           {fact.voteFalse}
