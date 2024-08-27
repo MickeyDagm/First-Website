@@ -14,9 +14,9 @@ function App() {
   const [facts, setFacts] = useState([]);
   const [isLoadng, setIsLoading] = useState(false);
   const [currentCategory, setCurrentCategory] = useState("all");
-  const [isMediumScreenWidth, setIsMediumScreenWidth] = useState(true);
+  const [isMediumScreenWidth, setIsMediumScreenWidth] = useState(window.innerWidth < 900);
   const [isCategoryVisible, setIsCategoryVisible] = useState(false);
-  const [isSmallScreenWidth, setIsSmallScreenWidth] = useState(true);
+  const [isSmallScreenWidth, setIsSmallScreenWidth] = useState(window.innerWidth < 600);
 
   useEffect(() => {
     //Function to handle screen size changes
