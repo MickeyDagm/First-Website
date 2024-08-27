@@ -31,7 +31,7 @@ function App() {
     window.addEventListener("resize", handleResize);
     //Cleanup function to remove event listener on unmount
     return () => window.removeEventListener("resize", handleResize);
-  }, [isMediumScreenWidth, isSmallScreenWidth]);
+  }, []);
 
   useEffect(
     function () {
