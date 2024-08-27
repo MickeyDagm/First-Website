@@ -25,7 +25,7 @@ function NewFactForm({ setFacts, setShowForm, supabase }) {
     // 1. Prevent the browser reload
     evt.preventDefault();
     // 2. Check if data is valid, If so Create new fact
-    if (isLimitReached && isValid && category && text) {
+    if (!isLimitReached && isValid && category && text) {
       // 3. Upload fact to Superbase and reload the fact
       setIsUploading(true);
       const { data: newFact, error } = await supabase
